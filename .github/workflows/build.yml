@@ -3,18 +3,20 @@ name: build
 on: push
 
 jobs:
-  services:
-    postgres:
-      image: "postgres:12-alpine"
-      env:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: my_phoenix_api_template_test
-      ports:
-        - 5432:5432
-      options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
   lint:
+    services:
+      postgres:
+        image: "postgres:12-alpine"
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: my_phoenix_api_template_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

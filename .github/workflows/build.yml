@@ -5,19 +5,19 @@ on: push
 jobs:
   lint:
     runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-        - name: Setup elixir
-          uses: actions/setup-elixir@v1
-          with:
-            elixir-version: 1.9.0
-            otp-version: 22
-        - name: Install Dependencies
-          run: mix deps.get
-        - name: Run Credo
-          run: mix test
-        - name: Ensure Formatting
-          run: mix format --check-formatted
+    steps:
+    - uses: actions/checkout@v2
+      - name: Setup elixir
+        uses: actions/setup-elixir@v1
+        with:
+          elixir-version: 1.9.0
+          otp-version: 22
+      - name: Install Dependencies
+        run: mix deps.get
+      - name: Run Credo
+        run: mix test
+      - name: Ensure Formatting
+        run: mix format --check-formatted
 
   test:
     runs-on: ubuntu-latest

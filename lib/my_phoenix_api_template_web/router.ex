@@ -7,5 +7,7 @@ defmodule MyPhoenixApiTemplateWeb.Router do
 
   scope "/api", MyPhoenixApiTemplateWeb do
     pipe_through :api
+
+    get "/ping", PingController, :index
   end
 end

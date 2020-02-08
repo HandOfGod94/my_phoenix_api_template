@@ -1,5 +1,7 @@
 # MyPhoenixApiTemplate
 
+[![build-badge](https://github.com/handofgod94/my_phoenix_api_template/workflows/build/badge.svg)](https://github.com/HandOfGod94/my_phoenix_api_template/actions)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
